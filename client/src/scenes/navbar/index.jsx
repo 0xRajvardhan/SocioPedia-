@@ -23,8 +23,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
-import { FlexBetween } from "components/FlexBetween";
-import { fontSize } from "@mui/system";
+import FlexBetween from "components/FlexBetween";
 
 
 const Navbar = () => {
@@ -71,7 +70,7 @@ const Navbar = () => {
         {isNonMobileScreens ? (
             <FlexBetween gap="2rem">
                 <IconButton onClick={() => dispatch(setMode())}>
-                    {theme.palette.mode == "dark" ? (
+                    {theme.palette.mode === "dark" ? (
                         <DarkMode sx={{ fontSize: "25px" }} />
                     ) : (
                         <LightMode sx={{ color: dark, fontSize: "25px" }} />
@@ -137,8 +136,8 @@ const Navbar = () => {
                 {/* MENU ITEMS */}
 
                 <FlexBetween display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap="3rem">
-                    <IconButton onClick={() => dispatch(setMode())}>
-                        {theme.palette.mode == "dark" ? (
+                    <IconButton onClick={() => dispatch(setMode())} sx={{ fontSize: "25px" }}>
+                        {theme.palette.mode === "dark" ? (
                             <DarkMode sx={{ fontSize: "25px" }} />
                         ) : (
                             <LightMode sx={{ color: dark, fontSize: "25px" }} />
