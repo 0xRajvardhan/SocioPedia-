@@ -10,10 +10,6 @@ const postSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        userId: {
-            type: String,
-            required: true,
-        },
         lastName: {
             type: String,
             required: true,
