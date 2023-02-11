@@ -24,10 +24,10 @@ export const createPost = async (req, res) => {
     } catch (err) {
         res.status(409).json({ message: err.message });
     }
-}
+};
 
 // READ
-export const getFeedPosts = async (res, req) => {
+export const getFeedPosts = async (req, res) => {
     try {
         const post = await Post.find();
         res.status(200).json(post);
@@ -66,8 +66,8 @@ export const likePost = async (req, res) => {
             { new: true }
         )
 
-        res.status(200).json();
+        res.status(200).json(updatedPost);
     } catch (err) {
         res.status(404).json({ message: err.message });
     }
-}
+};
